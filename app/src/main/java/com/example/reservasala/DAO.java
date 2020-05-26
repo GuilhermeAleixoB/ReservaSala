@@ -5,13 +5,10 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-
-public class bd extends SQLiteOpenHelper {
+public class DAO extends SQLiteOpenHelper {
     private static final String NOME_BANCO = "ReservaSala.db";
     private static final String TABELA1 = "Sala";
-    private static final String IDSALA = "_id";
+    private static final String ID = "_id";
     private static final String NSALA = "nSala";
     private static final String INFOSALA = "infoSala";
     private static final String TABELA2 = "Equipamento";
@@ -24,9 +21,10 @@ public class bd extends SQLiteOpenHelper {
     private static final String IDRESERVA = "_idReserva";
     private static final String NOME = "nome";
     private static final String DATA = "data";
+    private static final String IDSALA = "_idSala";
     private static final int VERSAO = 9;
 
-    public bd(Context context) {
+    public DAO(Context context) {
         super(context, getNomeBanco(), null, getVERSAO());
     }
 
@@ -38,8 +36,8 @@ public class bd extends SQLiteOpenHelper {
         return TABELA1;
     }
 
-    public static String getIDSALA() {
-        return IDSALA;
+    public static String getID() {
+        return ID;
     }
 
     public static String getNSALA() {
@@ -70,16 +68,12 @@ public class bd extends SQLiteOpenHelper {
         return TABELA3;
     }
 
-    public static String getIDEQUIPSALA() {
-        return IDEQUIPSALA;
+    public static String getIDSALA() {
+        return IDSALA;
     }
 
     public static String getTABELA4() {
         return TABELA4;
-    }
-
-    public static String getIDRESERVA() {
-        return IDRESERVA;
     }
 
     public static String getNOME() {
@@ -96,34 +90,33 @@ public class bd extends SQLiteOpenHelper {
 
 
     SQLiteDatabase db;
-    bd banco;
+    DAO banco;
 
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE "+ getTABELA1() +"("
-            + getIDSALA() + " integer primary key autoincrement,"
+            + getID() + " integer primary key autoincrement,"
             + getNSALA() + " text,"
             + getINFOSALA() + " text"
             +")";
         db.execSQL(sql);
 
         String sql1 = "CREATE TABLE "+ getTABELA2() +"("
-                + getIDEQUIP() + " integer primary key autoincrement,"
+                + getID() + " integer primary key autoincrement,"
                 + getEQUIP() + " text,"
                 + getINFOEQUIP() + " text"
                 +")";
         db.execSQL(sql1);
 
         String sql2 = "CREATE TABLE "+ getTABELA3() +"("
-                + getIDEQUIPSALA() + " integer primary key autoincrement,"
-                + getIDEQUIP() + " text,"
+                + getID() + " integer primary key autoincrement,"
                 + getIDSALA() + " text,"
-                + "FOREIGN KEY ( " + getIDSALA() + ") REFERENCES " + getTABELA1() + "(" + getIDSALA() + "),"
-                + "FOREIGN KEY ( " + getIDEQUIP() + ") REFERENCES " + getTABELA2() + "(" + getIDEQUIP() + "))";
+                + getIDEQUIP() + " text"
+                + ")";
         db.execSQL(sql2);
 
         String sql3 = "CREATE TABLE "+ getTABELA4() +"("
-                + getIDRESERVA() + " integer primary key autoincrement,"
+                + getID() + " integer primary key autoincrement,"
                 + getNOME() + " text,"
                 + getDATA() + " text,"
                 + getIDSALA() + " text"
@@ -156,9 +149,57 @@ public class bd extends SQLiteOpenHelper {
         }
     }
 
+    public Cursor getEquip() {
+        try {
+            String selectQuery = "SELECT * FROM Equipamento";
+            SQLiteDatabase database = this.getWritableDatabase();
+            Cursor cursor = database.rawQuery(selectQuery, null);
+            return cursor;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+
+    public Cursor getEquipSala() {
+        try {
+            String selectQuery = "SELECT * FROM EquipSala";
+            SQLiteDatabase database = this.getWritableDatabase();
+            Cursor cursor = database.rawQuery(selectQuery, null);
+            return cursor;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+
+    public Cursor getReserva() {
+        try {
+            String selectQuery = "SELECT * FROM Reserva";
+            SQLiteDatabase database = this.getWritableDatabase();
+            Cursor cursor = database.rawQuery(selectQuery, null);
+            return cursor;
+        } catch (Exception ex) {
+            return null;
+        }
+    }
+
     public int deletarSala(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
         return db.delete(TABELA1, "_id = ?", new String[] {id});
+    }
+
+    public int deletarEquip(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABELA2, "_id = ?", new String[] {id});
+    }
+
+    public int deletarEquipSala(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABELA3, "_id = ?", new String[] {id});
+    }
+
+    public int deletarReserva(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABELA4, "_id = ?", new String[] {id});
     }
 
 

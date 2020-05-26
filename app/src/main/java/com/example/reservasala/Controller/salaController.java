@@ -1,21 +1,18 @@
-package com.example.reservasala;
+package com.example.reservasala.Controller;
 
 import android.content.ContentValues;
 import android.content.Context;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import com.example.reservasala.bd;
-
-import java.util.ArrayList;
+import com.example.reservasala.DAO;
 
 public class salaController {
 
     private SQLiteDatabase db;
-    private bd banco;
+    private DAO banco;
 
     public salaController(Context context){
-        banco = new bd(context);
+        banco = new DAO(context);
     }
 
     public String insereDado(String nSala, String infoSala){
@@ -24,10 +21,10 @@ public class salaController {
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
-        valores.put(bd.getNSALA(), nSala);
-        valores.put(bd.getINFOSALA(), infoSala);
+        valores.put(DAO.getNSALA(), nSala);
+        valores.put(DAO.getINFOSALA(), infoSala);
 
-        resultado = db.insert(bd.getTABELA1(), null, valores);
+        resultado = db.insert(DAO.getTABELA1(), null, valores);
         db.close();
 
         if (resultado ==-1)

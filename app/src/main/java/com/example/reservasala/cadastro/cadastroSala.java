@@ -1,4 +1,4 @@
-package com.example.reservasala;
+package com.example.reservasala.cadastro;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,9 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.reservasala.Controller.salaController;
+import com.example.reservasala.MainActivity;
 import com.example.reservasala.R;
 
 public class cadastroSala extends Activity implements View.OnClickListener {
@@ -19,8 +20,6 @@ public class cadastroSala extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrosala);
-
-
     }
 
     @Override

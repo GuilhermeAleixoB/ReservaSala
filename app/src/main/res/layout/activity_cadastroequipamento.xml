@@ -33,11 +33,11 @@
         android:id="@+id/textView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="17dp"
-        android:layout_marginBottom="140dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
         android:text="Informações do equipamento"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
     <EditText
         android:id="@+id/txtEquip"
@@ -54,12 +54,12 @@
         android:id="@+id/txtInfoEquip"
         android:layout_width="169dp"
         android:layout_height="47dp"
+        android:layout_marginTop="38dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginBottom="128dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtEquip" />
 
     <Button
         android:id="@+id/btnCadastrar"
@@ -67,21 +67,25 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="153dp"
         android:layout_marginEnd="153dp"
-        android:layout_marginBottom="280dp"
+        android:layout_marginBottom="464dp"
+        android:onClick="onClick"
         android:text="Cadastrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.718"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tvResultado"
-        android:layout_width="171dp"
-        android:layout_height="28dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginEnd="120dp"
-        android:layout_marginBottom="36dp"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="377dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginBottom="287dp"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="voltar" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

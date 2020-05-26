@@ -25,7 +25,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="56dp"
         android:layout_marginTop="192dp"
+        android:layout_marginEnd="240dp"
         android:text="ID:"
+        app:layout_constraintEnd_toEndOf="@+id/txtId"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -55,10 +57,45 @@
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="9dp"
-        android:layout_marginBottom="276dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="172dp"
+        android:onClick="voltar"
         android:text="Voltar"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/btnEquip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="68dp"
+        android:onClick="equip"
+        android:text="Equipamento"
+        app:layout_constraintStart_toEndOf="@+id/btnSala"
+        app:layout_constraintTop_toBottomOf="@+id/txtId" />
+
+    <Button
+        android:id="@+id/btnReservar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="20dp"
+        android:text="Reserva"
         app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="voltar" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnEquip"
+        app:layout_constraintTop_toBottomOf="@+id/txtId"
+        android:onClick="reserva" />
+
+    <Button
+        android:id="@+id/btnEquipSala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="120dp"
+        android:text="Equipamentos da sala"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSala"
+        android:onClick="equipSala" />
 </androidx.constraintlayout.widget.ConstraintLayout>

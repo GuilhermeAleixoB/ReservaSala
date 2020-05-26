@@ -1,4 +1,4 @@
-package com.example.reservasala;
+package com.example.reservasala.lista;
 
 import android.content.Intent;
 import android.database.Cursor;
@@ -11,9 +11,13 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class salas extends AppCompatActivity {
+import com.example.reservasala.DAO;
+import com.example.reservasala.MainActivity;
+import com.example.reservasala.R;
 
-    bd db;
+public class reservas extends AppCompatActivity {
+
+    DAO db;
     ListView lista;
 
 
@@ -21,10 +25,10 @@ public class salas extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_salas);
+        setContentView(R.layout.activity_reservas);
 
-        db = new bd(this);
-        lista = (ListView) findViewById(R.id.sala_list);
+        db = new DAO(this);
+        lista = (ListView) findViewById(R.id.reserva_list);
 
         viewTudo();
 
@@ -42,19 +46,19 @@ public class salas extends AppCompatActivity {
 
         try {
             if (db == null)
-                db = new bd(this);
+                db = new DAO(this);
             SQLiteDatabase sqlDb = db.getReadableDatabase();
-            Cursor c = db.getSalas();
+            Cursor c = db.getReserva();
 
-            String coluna[] = new String[] {"_id" , "nSala" , "infoSala"};
-            int id[] = new int[] { R.id.tvIdSala, R.id.tvNSala, R.id.tvInfoSala };
+            String coluna[] = new String[] {"_id" , "nome" , "data", "_idSala"};
+            int id[] = new int[] { R.id.tvId, R.id.tvNome, R.id.tvInfo, R.id.tvData };
 
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                    R.layout.activity_linha_sala, c, coluna, id);
+                    R.layout.activity_linha, c, coluna, id);
             lista.setAdapter(adapter);
 
         } catch (Exception ex) {
-            Toast.makeText(salas.this, ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(reservas.this, ex.getMessage().toString(), Toast.LENGTH_SHORT).show();
         }
 
     }

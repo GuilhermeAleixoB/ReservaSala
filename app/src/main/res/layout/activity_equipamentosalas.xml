@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/equipSala_list"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:dividerHeight="1dp" />
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:onClick="voltar"
+        android:text="Menu" />
+
+    <Button
+        android:id="@+id/btnReserva"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reserva"
+        android:onClick="reserva"/>
+
+    <TextView
+        android:id="@+id/tvES"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID Associação:" />
+
+    <TextView
+        android:id="@+id/tvSala"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID Sala:"
+        android:layout_alignBaseline="@+id/tvES"
+        android:layout_alignBottom="@+id/tvES"/>
+
+    <TextView
+        android:id="@+id/tvEquip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID Equip:"
+        android:layout_alignBaseline="@+id/tvSala"
+        android:layout_alignBottom="@+id/tvSala" />
+
+</LinearLayout>

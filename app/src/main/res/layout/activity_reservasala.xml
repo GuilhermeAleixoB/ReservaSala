@@ -34,18 +34,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="22dp"
-        android:layout_marginBottom="49dp"
-        android:text="Dia da reserva"
-        app:layout_constraintBottom_toTopOf="@+id/textView19"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/textView19"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
         android:layout_marginBottom="45dp"
-        android:text="Equipamento necessario"
+        android:text="Dia da reserva"
         app:layout_constraintBottom_toTopOf="@+id/textView20"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -53,8 +43,8 @@
         android:id="@+id/textView20"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="27dp"
-        android:layout_marginBottom="344dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="412dp"
         android:text="Numero da sala"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -65,11 +55,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
         android:layout_marginEnd="157dp"
-        android:layout_marginBottom="182dp"
+        android:layout_marginBottom="240dp"
         android:text="Reservar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="onClick" />
 
     <EditText
         android:id="@+id/txtNome"
@@ -94,21 +86,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNome" />
 
-    <Spinner
-        android:id="@+id/spiEquip"
-        android:layout_width="212dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="12dp"
+    <EditText
+        android:id="@+id/txtSala"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
+        android:ems="10"
+        android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtData" />
 
-    <Spinner
-        android:id="@+id/spinner2"
-        android:layout_width="212dp"
-        android:layout_height="24dp"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="109dp"
+    <Button
+        android:id="@+id/btnEquipSala"
+        android:layout_width="382dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="48dp"
+        android:text="Lista de salas e seus equipamentos"
         app:layout_constraintBottom_toTopOf="@+id/btnReservar"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:onClick="equipSala"/>
+
+    <Button
+        android:id="@+id/btnVoltar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="119dp"
+        android:text="Voltar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:onClick="voltar"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
