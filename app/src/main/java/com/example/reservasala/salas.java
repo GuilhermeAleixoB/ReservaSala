@@ -5,15 +5,11 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.CursorAdapter;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-import java.util.ArrayList;
 
 public class salas extends AppCompatActivity {
 
@@ -54,7 +50,7 @@ public class salas extends AppCompatActivity {
             int id[] = new int[] { R.id.tvIdSala, R.id.tvNSala, R.id.tvInfoSala };
 
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                    R.layout.lista_linha, c, coluna, id);
+                    R.layout.activity_linha_sala, c, coluna, id);
             lista.setAdapter(adapter);
 
         } catch (Exception ex) {

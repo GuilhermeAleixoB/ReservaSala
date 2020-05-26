@@ -14,16 +14,20 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    public void cadSala(View view) {
-        Intent intent = new Intent(this, cadastraSala.class);
+    public void cadSala(View v) {
+        Intent intent = new Intent(this, cadastroSala.class);
         startActivity(intent);
 
     }
 
     public void consulSala(View v){
-
         Intent intent = new Intent(this, salas.class);
         startActivity(intent);
+    }
 
+
+    public void delete(View v){
+        Intent intent = new Intent(this, delete.class);
+        startActivity(intent);
     }
 }

@@ -12,10 +12,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="65dp"
         android:layout_marginTop="105dp"
+        android:layout_marginEnd="33dp"
+        android:onClick="cadSala"
         android:text="Cadastro da sala"
+        app:layout_constraintEnd_toStartOf="@+id/btnConsulSala"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="cadSala" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnConsulSala"
@@ -27,5 +29,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="consulSala"  />
+
+    <Button
+        android:id="@+id/btnDelete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="68dp"
+        android:onClick="delete"
+        android:text="Apagar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btncadSala" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

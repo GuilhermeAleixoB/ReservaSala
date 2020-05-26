@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".salas" />
         <activity android:name=".cadastroSala" />
-        <activity android:name=".cadastraSala" />
+        <activity android:name=".delete" />
         <activity android:name=".bd" />
         <activity android:name=".MainActivity">
             <intent-filter>

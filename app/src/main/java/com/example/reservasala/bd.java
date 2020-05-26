@@ -94,6 +94,10 @@ public class bd extends SQLiteOpenHelper {
         return VERSAO;
     }
 
+
+    SQLiteDatabase db;
+    bd banco;
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE "+ getTABELA1() +"("
@@ -150,6 +154,11 @@ public class bd extends SQLiteOpenHelper {
         } catch (Exception ex) {
             return null;
         }
+    }
+
+    public int deletarSala(String id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return db.delete(TABELA1, "_id = ?", new String[] {id});
     }
 
 

@@ -42,7 +42,7 @@ public class linhaSala extends BaseAdapter {
         public View getView(int position, View convertView, ViewGroup parent) {
 
 
-            View view = mLayoutInflater.inflate(R.layout.lista_linha,parent,false);
+            View view = mLayoutInflater.inflate(R.layout.activity_linha_sala,parent,false);
             Holder h = new Holder();
 
             h._id = (TextView)(view.findViewById(R.id.tvIdSala));
