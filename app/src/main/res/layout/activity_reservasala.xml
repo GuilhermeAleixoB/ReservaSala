@@ -56,12 +56,13 @@
         android:layout_marginStart="162dp"
         android:layout_marginEnd="157dp"
         android:layout_marginBottom="240dp"
+        android:drawableLeft="@android:drawable/ic_menu_save"
+        android:onClick="onClick"
         android:text="Reservar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="onClick" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtNome"
@@ -104,21 +105,23 @@
         android:layout_marginStart="19dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="48dp"
+        android:drawableLeft="@android:drawable/ic_menu_search"
+        android:onClick="equipSala"
         android:text="Lista de salas e seus equipamentos"
         app:layout_constraintBottom_toTopOf="@+id/btnReservar"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="equipSala"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="22dp"
-        android:layout_marginBottom="119dp"
-        android:text="Voltar"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="52dp"
+        android:drawableLeft="@android:drawable/ic_menu_revert"
+        android:onClick="voltar"
+        android:text="Menu"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:onClick="voltar"/>
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

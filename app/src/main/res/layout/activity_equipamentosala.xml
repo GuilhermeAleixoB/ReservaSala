@@ -46,11 +46,12 @@
         android:layout_marginStart="153dp"
         android:layout_marginEnd="153dp"
         android:layout_marginBottom="329dp"
+        android:drawableLeft="@android:drawable/ic_menu_save"
+        android:onClick="onClick"
         android:text="Cadastrar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:onClick="onClick" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
         android:id="@+id/txtSala"
@@ -67,12 +68,14 @@
         android:id="@+id/txtEquip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
+        android:layout_marginStart="36dp"
         android:layout_marginTop="33dp"
         android:ems="10"
         android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastrar"
         app:layout_constraintStart_toEndOf="@+id/textView15"
-        app:layout_constraintTop_toBottomOf="@+id/txtSala" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSala"
+        app:layout_constraintVertical_bias="0.128" />
 
     <Button
         android:id="@+id/btnVoltar"
@@ -83,6 +86,7 @@
         android:text="Voltar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:drawableLeft="@android:drawable/ic_menu_revert"
         android:onClick="voltar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="fill_parent"
+    android:layout_width="fill_parent">
+
+<LinearLayout
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
@@ -12,19 +17,22 @@
 
     <Button
         android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
+        android:layout_width="138dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
+        android:drawableLeft="@android:drawable/ic_menu_revert"
         android:onClick="voltar"
         android:text="Menu" />
 
     <Button
         android:id="@+id/btnReserva"
-        android:layout_width="match_parent"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:text="Reserva"
-        android:onClick="reserva"/>
+        android:layout_gravity="center"
+        android:drawableLeft="@android:drawable/ic_menu_revert"
+        android:onClick="reserva"
+        android:text="Reserva" />
 
     <TextView
         android:id="@+id/tvES"
@@ -49,3 +57,5 @@
         android:layout_alignBottom="@+id/tvSala" />
 
 </LinearLayout>
+
+</ScrollView>

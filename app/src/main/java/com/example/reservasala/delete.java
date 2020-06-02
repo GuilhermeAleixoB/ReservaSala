@@ -1,12 +1,15 @@
 package com.example.reservasala;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class delete extends AppCompatActivity {
@@ -20,6 +23,9 @@ public class delete extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deleta);
+        ActionBar bar = getSupportActionBar();
+        bar.setTitle("APAGAR");
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#5F9EA0")));
         db = new DAO(this);
 
 sala = (Button) findViewById(R.id.btnSala);

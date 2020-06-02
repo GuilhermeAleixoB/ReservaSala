@@ -8,8 +8,9 @@
 
     <ScrollView
         android:id="@+id/scrollView2"
-        android:layout_width="413dp"
-        android:layout_height="617dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -20,93 +21,138 @@
 
             <Button
                 android:id="@+id/btncadSala"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="40dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_add"
                 android:onClick="cadSala"
-                android:text="Cadastro da sala" />
+                android:text="      Cadastro da sala"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnConsulSala"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_search"
                 android:onClick="consulSala"
-                android:text="Lista de Salas" />
+                android:text="      Lista de Salas"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btncadEquip"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
-                android:text="Cadastro do equipamento"
-                android:onClick="cadEquip" />
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_add"
+                android:onClick="cadEquip"
+                android:text="      Cadastro do equipamento"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnConsulEquip"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
-                android:text="Lista de Equipamentos"
-                android:onClick="consulEquip" />
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_search"
+                android:onClick="consulEquip"
+                android:text="      Lista de Equipamentos"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btncadEquipSala"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
-                android:text="Associação do equipamento à sala"
-                android:onClick="cadEquipSala" />
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_add"
+                android:onClick="cadEquipSala"
+                android:text="      Associação do equipamento à sala"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnConsulEquipSala"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_search"
                 android:onClick="consulEquipSala"
-                android:text="Lista de salas e seus equipamentos" />
+                android:text="      Lista de salas e seus equipamentos"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btncadReserva"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_add"
                 android:onClick="cadReserva"
-                android:text="Reserva" />
+                android:text="      Reserva"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnConsulReserva"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_search"
                 android:onClick="consulReserva"
-                android:text="Lista de reserva" />
+                android:text="      Lista de reserva"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
 
             <Button
                 android:id="@+id/btnDelete"
-                android:layout_width="380dp"
-                android:layout_height="49dp"
-                android:layout_marginStart="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/shape"
+                android:backgroundTint="#5F9EA0"
+                android:drawableLeft="@android:drawable/ic_menu_delete"
                 android:onClick="delete"
-                android:text="Apagar" />
+                android:text="      Apagar"
+                android:textAlignment="textStart"
+                android:textColor="#FFFFFF" />
         </LinearLayout>
     </ScrollView>
 

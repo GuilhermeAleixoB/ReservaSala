@@ -2,17 +2,22 @@ package com.example.reservasala.cadastro;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.reservasala.Controller.equipSalaController;
 import com.example.reservasala.MainActivity;
 import com.example.reservasala.R;
 
-public class equipamentoSala extends Activity implements View.OnClickListener {
+public class equipamentoSala extends AppCompatActivity implements View.OnClickListener {
 
     Button btnCadastrar;
 
@@ -20,6 +25,9 @@ public class equipamentoSala extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_equipamentosala);
+        ActionBar bar = getSupportActionBar();
+        bar.setTitle("CADASTRO DE ASSOCIAÇÃO");
+        bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#5F9EA0")));
     }
 
     @Override
