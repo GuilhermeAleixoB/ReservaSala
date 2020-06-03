@@ -1,30 +1,89 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="fill_parent"
-    android:layout_width="fill_parent">
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
-    <ListView
-        android:id="@+id/reserva_list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:dividerHeight="1dp" />
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="448dp"
+        android:layout_height="427dp"
+        android:layout_marginBottom="140dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/reserva_list"
+                android:layout_width="match_parent"
+                android:layout_height="410dp"
+                android:layout_weight="100"
+                android:dividerHeight="3dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
 
     <Button
         android:id="@+id/btnVoltar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#5F9EA0"
         android:clickable="true"
+        android:drawableLeft="@android:drawable/ic_menu_revert"
         android:onClick="voltar"
         android:text="Voltar"
-        android:drawableLeft="@android:drawable/ic_menu_revert" />
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
-</LinearLayout>
-</ScrollView>
+    <TextView
+        android:id="@+id/tvRes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ID Reserva:"
+        app:layout_constraintBottom_toTopOf="@+id/tvProf"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvProf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvRes"
+        android:layout_alignBottom="@+id/tvRes"
+        android:text="Nome do professor:"
+        app:layout_constraintBottom_toTopOf="@+id/tvData"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvProf"
+        android:layout_alignBottom="@+id/tvProf"
+        android:text="Data da reserva:"
+        app:layout_constraintBottom_toTopOf="@+id/tvSala"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSala"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvData"
+        android:layout_alignBottom="@+id/tvData"
+        android:text="ID Sala:"
+        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

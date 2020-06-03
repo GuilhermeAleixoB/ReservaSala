@@ -33,7 +33,7 @@ public class equipamentos extends AppCompatActivity {
         bar.setTitle("LISTA DE EQUIPAMENTOS");
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#5F9EA0")));
 
-        lista = (ListView) findViewById(R.id.equipSala_list);
+        lista = (ListView) findViewById(R.id.equip_list);
 
         viewTudo();
 

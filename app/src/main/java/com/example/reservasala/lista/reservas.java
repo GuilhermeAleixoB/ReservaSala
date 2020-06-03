@@ -60,7 +60,7 @@ public class reservas extends AppCompatActivity {
             int id[] = new int[] { R.id.tvId, R.id.tvNome, R.id.tvInfo, R.id.tvData };
 
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,
-                    R.layout.activity_linha, c, coluna, id);
+                    R.layout.activity_linha1, c, coluna, id);
             lista.setAdapter(adapter);
 
         } catch (Exception ex) {

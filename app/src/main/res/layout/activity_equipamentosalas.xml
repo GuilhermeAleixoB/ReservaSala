@@ -1,61 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent">
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="fill_parent"
-    android:layout_width="fill_parent">
 
-<LinearLayout
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical" >
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="448dp"
+        android:layout_height="362dp"
+        android:layout_marginBottom="200dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
-    <ListView
-        android:id="@+id/equipSala_list"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:dividerHeight="1dp" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/equipSala_list"
+                android:layout_width="fill_parent"
+                android:layout_height="352dp"
+                android:layout_weight="100"
+                android:dividerHeight="3dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
     <Button
         android:id="@+id/btnVoltar"
-        android:layout_width="138dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#5F9EA0"
         android:drawableLeft="@android:drawable/ic_menu_revert"
         android:onClick="voltar"
-        android:text="Menu" />
+        android:text="Voltar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnReserva"
         android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#5F9EA0"
         android:drawableLeft="@android:drawable/ic_menu_revert"
         android:onClick="reserva"
-        android:text="Reserva" />
+        android:text="Reserva"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvES"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ID Associação:" />
+        android:layout_marginBottom="1dp"
+        android:text="ID Associação:"
+        app:layout_constraintBottom_toTopOf="@+id/tvSala"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvSala"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ID Sala:"
         android:layout_alignBaseline="@+id/tvES"
-        android:layout_alignBottom="@+id/tvES"/>
+        android:layout_alignBottom="@+id/tvES"
+        android:text="ID Sala:"
+        app:layout_constraintBottom_toTopOf="@+id/tvEquip"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/tvEquip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ID Equip:"
         android:layout_alignBaseline="@+id/tvSala"
-        android:layout_alignBottom="@+id/tvSala" />
+        android:layout_alignBottom="@+id/tvSala"
+        android:layout_marginBottom="5dp"
+        android:text="ID Equip:"
+        app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
-
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

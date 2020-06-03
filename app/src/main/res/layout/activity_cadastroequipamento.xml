@@ -41,8 +41,8 @@
 
     <EditText
         android:id="@+id/txtEquip"
-        android:layout_width="169dp"
-        android:layout_height="43dp"
+        android:layout_width="103dp"
+        android:layout_height="48dp"
         android:layout_marginTop="58dp"
         android:layout_marginEnd="19dp"
         android:ems="10"
@@ -52,7 +52,7 @@
 
     <EditText
         android:id="@+id/txtInfoEquip"
-        android:layout_width="169dp"
+        android:layout_width="103dp"
         android:layout_height="47dp"
         android:layout_marginTop="38dp"
         android:layout_marginEnd="16dp"
@@ -66,16 +66,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="153dp"
+        android:layout_marginTop="54dp"
         android:layout_marginEnd="153dp"
-        android:layout_marginBottom="332dp"
+        android:background="@drawable/shape"
+        android:backgroundTint="#5F9EA0"
         android:drawableLeft="@android:drawable/ic_menu_save"
         android:onClick="onClick"
-        android:text="Cadastrar"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="      Cadastrar"
+        android:textAlignment="textStart"
+        android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.146"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtInfoEquip" />
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
 
     <Button
         android:id="@+id/btnVoltar"
@@ -86,10 +89,14 @@
         android:layout_marginBottom="36dp"
         android:drawableLeft="@android:drawable/ic_menu_revert"
         android:onClick="voltar"
-        android:text="Voltar"
+        android:text="      Voltar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/shape"
+        android:backgroundTint="#5F9EA0"
+        android:textAlignment="textStart"
         app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
