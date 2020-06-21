@@ -12,14 +12,15 @@
         <activity android:name=".lista.salas" />
         <activity android:name=".cadastro.cadastroSala" />
         <activity android:name=".delete" />
-        <activity android:name=".DAO" />
         <activity android:name=".lista.reservas" />
         <activity android:name=".cadastro.reserva" />
         <activity android:name=".lista.equipSalas" />
         <activity android:name=".lista.equipamentos" />
         <activity android:name=".cadastro.cadastroEquipamento" />
         <activity android:name=".cadastro.equipamentoSala" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".cadastro.cadastroLogin" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

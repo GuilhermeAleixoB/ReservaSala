@@ -24,14 +24,20 @@ public class salaController {
         valores.put(DAO.getNSALA(), nSala);
         valores.put(DAO.getINFOSALA(), infoSala);
 
-        resultado = db.insert(DAO.getTABELA1(), null, valores);
-        db.close();
+        boolean isValid = banco.findSala(nSala);
 
-        if (resultado ==-1)
-            return "Erro ao inserir registro";
-        else
-            return "Registro inserido com sucesso";
+        if (isValid) {
+            resultado = db.insert(DAO.getTABELA1(), null, valores);
+            db.close();
 
+            if (resultado == -1)
+                return "Erro ao inserir registro!";
+            else
+                return "Registro inserido com sucesso!";
+
+        }else{
+            return "Sala já cadastrada!";
+        }
     }
 
 

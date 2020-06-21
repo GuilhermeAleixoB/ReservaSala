@@ -56,7 +56,7 @@ public class reservas extends AppCompatActivity {
             SQLiteDatabase sqlDb = db.getReadableDatabase();
             Cursor c = db.getReserva();
 
-            String coluna[] = new String[] {"_id" , "nome" , "data", "_idSala"};
+            String coluna[] = new String[] {"_id" , "nome" , "data", "nSala"};
             int id[] = new int[] { R.id.tvId, R.id.tvNome, R.id.tvInfo, R.id.tvData };
 
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,

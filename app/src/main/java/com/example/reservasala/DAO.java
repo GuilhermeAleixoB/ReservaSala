@@ -21,7 +21,11 @@ public class DAO extends SQLiteOpenHelper {
     private static final String IDRESERVA = "_idReserva";
     private static final String NOME = "nome";
     private static final String DATA = "data";
-    private static final String IDSALA = "_idSala";
+    private static final String TABELA5 = "Login";
+    private static final String IDLOGIN = "_idLogin";
+    private static final String LNOME = "Lnome";
+    private static final String LOGIN = "login";
+    private static final String SENHA = "senha";
     private static final int VERSAO = 9;
 
     public DAO(Context context) {
@@ -68,10 +72,6 @@ public class DAO extends SQLiteOpenHelper {
         return TABELA3;
     }
 
-    public static String getIDSALA() {
-        return IDSALA;
-    }
-
     public static String getTABELA4() {
         return TABELA4;
     }
@@ -92,6 +92,30 @@ public class DAO extends SQLiteOpenHelper {
     SQLiteDatabase db;
     DAO banco;
 
+    public static String getIDEQUIPSALA() {
+        return IDEQUIPSALA;
+    }
+
+    public static String getSENHA() {
+        return SENHA;
+    }
+
+    public static String getTABELA5() {
+        return TABELA5;
+    }
+
+    public static String getIDLOGIN() {
+        return IDLOGIN;
+    }
+
+    public static String getLNOME() {
+        return LNOME;
+    }
+
+    public static String getLOGIN() {
+        return LOGIN;
+    }
+
     @Override
     public void onCreate(SQLiteDatabase db) {
         String sql = "CREATE TABLE "+ getTABELA1() +"("
@@ -110,8 +134,8 @@ public class DAO extends SQLiteOpenHelper {
 
         String sql2 = "CREATE TABLE "+ getTABELA3() +"("
                 + getID() + " integer primary key autoincrement,"
-                + getIDSALA() + " text,"
-                + getIDEQUIP() + " text"
+                + getNSALA() + " text,"
+                + getEQUIP() + " text"
                 + ")";
         db.execSQL(sql2);
 
@@ -119,9 +143,18 @@ public class DAO extends SQLiteOpenHelper {
                 + getID() + " integer primary key autoincrement,"
                 + getNOME() + " text,"
                 + getDATA() + " text,"
-                + getIDSALA() + " text"
+                + getNSALA() + " text"
                 +")";
         db.execSQL(sql3);
+
+
+        String sql4 = "CREATE TABLE "+ getTABELA5() +"("
+                + getIDLOGIN() + " integer primary key autoincrement,"
+                + getLNOME() + " text,"
+                + getLOGIN() + " text,"
+                + getSENHA() + " text"
+                +")";
+        db.execSQL(sql4);
 
     }
 
@@ -131,6 +164,7 @@ public class DAO extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS Equipamento");
         db.execSQL("DROP TABLE IF EXISTS EquipSala");
         db.execSQL("DROP TABLE IF EXISTS Reserva");
+        db.execSQL("DROP TABLE IF EXISTS Login");
         onCreate(db);
     }
 
@@ -184,22 +218,130 @@ public class DAO extends SQLiteOpenHelper {
 
     public int deletarSala(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABELA1, "_id = ?", new String[] {id});
+        return db.delete(getTABELA1(), "_id = ?", new String[] {id});
     }
 
     public int deletarEquip(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABELA2, "_id = ?", new String[] {id});
+        return db.delete(getTABELA2(), "_id = ?", new String[] {id});
     }
 
     public int deletarEquipSala(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABELA3, "_id = ?", new String[] {id});
+        return db.delete(getTABELA3(), "_id = ?", new String[] {id});
     }
 
     public int deletarReserva(String id) {
         SQLiteDatabase db = this.getWritableDatabase();
-        return db.delete(TABELA4, "_id = ?", new String[] {id});
+        return db.delete(getTABELA4(), "_id = ?", new String[] {id});
+    }
+
+    public Usuario findByLogin(String login, String senha) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql0 = "SELECT * FROM " + getTABELA5() + " WHERE " + getLOGIN() +" = ? and " + getSENHA() +" = ?";
+        String[] selectionArgs = new String[] {login, senha};
+        Cursor cursor = db.rawQuery(sql0, selectionArgs);
+        cursor.moveToFirst();
+
+        return montaUsuario(cursor);
+    }
+
+    public Usuario montaUsuario(Cursor cursor) {
+        if (cursor.getCount() == 0){
+            return null;
+        }
+        Integer id = cursor.getInt(cursor.getColumnIndex("_idLogin"));
+        String nome = cursor.getString(cursor.getColumnIndex("Lnome"));
+        String login = cursor.getString(cursor.getColumnIndex("login"));
+        String senha = cursor.getString(cursor.getColumnIndex("senha"));
+
+        return new Usuario(id, nome, login, senha);
+    }
+
+    public boolean findBySala(String sala) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql0 = "SELECT * FROM " + getTABELA1() + " WHERE nSala = ?";
+        String[] selectionArgs = new String[] {sala};
+        Cursor cursor = db.rawQuery(sql0, selectionArgs);
+        cursor.moveToFirst();
+
+        if (cursor.getCount() == 0){
+            return false;
+        }
+
+        String cursorSala = cursor.getString(cursor.getColumnIndex("nSala"));
+        if (cursorSala.equals(sala)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public boolean findByEquip(String equip) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql0 = "SELECT * FROM " + getTABELA2() + " WHERE equip = ?";
+        String[] selectionArgs = new String[] {equip};
+        Cursor cursor = db.rawQuery(sql0, selectionArgs);
+        cursor.moveToFirst();
+
+        if (cursor.getCount() == 0){
+            return false;
+        }
+
+        String cursorEquip = cursor.getString(cursor.getColumnIndex("equip"));
+        if (cursorEquip.equals(equip)){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+
+    public boolean findByData(String sala, String data) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql0 = "SELECT * FROM " + getTABELA4() + " WHERE nSala = ? AND data = ?";
+        String[] selectionArgs = new String[] {sala, data};
+        Cursor cursor = db.rawQuery(sql0, selectionArgs);
+        cursor.moveToFirst();
+
+        if (cursor.getCount() == 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public boolean findSala(String sala) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql0 = "SELECT * FROM " + getTABELA1() + " WHERE nSala = ?";
+        String[] selectionArgs = new String[] {sala};
+        Cursor cursor = db.rawQuery(sql0, selectionArgs);
+        cursor.moveToFirst();
+
+        if (cursor.getCount() == 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
+    public boolean findEquip(String equip) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql0 = "SELECT * FROM " + getTABELA2() + " WHERE equip = ?";
+        String[] selectionArgs = new String[] {equip};
+        Cursor cursor = db.rawQuery(sql0, selectionArgs);
+        cursor.moveToFirst();
+
+        if (cursor.getCount() == 0){
+            return true;
+        }else{
+            return false;
+        }
+
     }
 
 

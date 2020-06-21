@@ -24,14 +24,21 @@ public class equipController {
         valores.put(DAO.getEQUIP(), equip);
         valores.put(DAO.getINFOEQUIP(), infoEquip);
 
-        resultado = db.insert(DAO.getTABELA2(), null, valores);
-        db.close();
+        boolean isValid = banco.findEquip(equip);
 
-        if (resultado ==-1)
-            return "Erro ao cadastrar equipamento";
-        else
-            return "Equipamento cadastrado com sucesso";
+        if (isValid) {
 
+            resultado = db.insert(DAO.getTABELA2(), null, valores);
+            db.close();
+
+            if (resultado == -1)
+                return "Erro ao cadastrar equipamento";
+            else
+                return "Equipamento cadastrado com sucesso";
+
+        }else{
+            return "Equipamento já cadastrado!";
+        }
     }
 
 

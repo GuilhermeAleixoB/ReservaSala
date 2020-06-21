@@ -53,26 +53,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ID Reserva:"
-        app:layout_constraintBottom_toTopOf="@+id/tvProf"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvProf"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvRes"
-        android:layout_alignBottom="@+id/tvRes"
-        android:text="Nome do professor:"
-        app:layout_constraintBottom_toTopOf="@+id/tvData"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/tvData"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvProf"
-        android:layout_alignBottom="@+id/tvProf"
-        android:text="Data da reserva:"
         app:layout_constraintBottom_toTopOf="@+id/tvSala"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -80,9 +60,29 @@
         android:id="@+id/tvSala"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvRes"
+        android:layout_alignBottom="@+id/tvRes"
+        android:text="ID sala:"
+        app:layout_constraintBottom_toTopOf="@+id/tvData"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvData"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvSala"
+        android:layout_alignBottom="@+id/tvSala"
+        android:text="Data da reserva:"
+        app:layout_constraintBottom_toTopOf="@+id/tvProfessor"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvProfessor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tvData"
         android:layout_alignBottom="@+id/tvData"
-        android:text="ID Sala:"
+        android:text="Nome do professor:"
         app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
         app:layout_constraintStart_toStartOf="parent" />
 

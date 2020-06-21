@@ -69,11 +69,11 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_marginBottom="1dp"
         android:text="ID Associação:"
-        app:layout_constraintBottom_toTopOf="@+id/tvSala"
+        app:layout_constraintBottom_toTopOf="@+id/tvProfessor"
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/tvSala"
+        android:id="@+id/tvProfessor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tvES"
@@ -86,8 +86,8 @@ android:layout_height="match_parent">
         android:id="@+id/tvEquip"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/tvSala"
-        android:layout_alignBottom="@+id/tvSala"
+        android:layout_alignBaseline="@+id/tvProfessor"
+        android:layout_alignBottom="@+id/tvProfessor"
         android:layout_marginBottom="5dp"
         android:text="ID Equip:"
         app:layout_constraintBottom_toTopOf="@+id/btnVoltar"

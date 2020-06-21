@@ -60,7 +60,7 @@ public class equipSalas extends AppCompatActivity {
             SQLiteDatabase sqlDb = db.getReadableDatabase();
             Cursor c = db.getEquipSala();
 
-            String coluna[] = new String[] {"_id" , "_idSala" , "_idEquip"};
+            String coluna[] = new String[] {"_id" , "nSala" , "equip"};
             int id[] = new int[] { R.id.tvId, R.id.tvNome, R.id.tvInfo };
 
             SimpleCursorAdapter adapter = new SimpleCursorAdapter(this,

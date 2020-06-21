@@ -23,15 +23,25 @@ public class reservaController {
         valores = new ContentValues();
         valores.put(DAO.getNOME(), nome);
         valores.put(DAO.getDATA(), data);
-        valores.put(DAO.getIDSALA(), sala);
+        valores.put(DAO.getNSALA(), sala);
 
-        resultado = db.insert(DAO.getTABELA4(), null, valores);
-        db.close();
+        boolean isValid1 = banco.findBySala(sala);
+        boolean isValid2 = banco.findByData(sala, data);
 
-        if (resultado ==-1)
-            return "Erro ao reservar sala";
-        else
-            return "Sala reservada";
+        if (isValid1 && isValid2) {
+            resultado = db.insert(DAO.getTABELA4(), null, valores);
+            db.close();
+
+            if (resultado == -1)
+                return "Erro ao reservar sala!";
+            else
+                return "Sala reservada!";
+
+        }else if (!isValid1){
+            return "Sala não existe!";
+        }else{
+            return "Sala já reservada para esse dia!";
+        }
 
     }
 

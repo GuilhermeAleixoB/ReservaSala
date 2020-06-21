@@ -21,18 +21,28 @@ public class equipSalaController {
 
         db = banco.getWritableDatabase();
         valores = new ContentValues();
-        valores.put(DAO.getIDSALA(), sala);
-        valores.put(DAO.getIDEQUIP(), equip);
+        valores.put(DAO.getNSALA(), sala);
+        valores.put(DAO.getEQUIP(), equip);
 
-        resultado = db.insert(DAO.getTABELA3(), null, valores);
-        db.close();
+        boolean isValid1 = banco.findBySala(sala);
+        boolean isValid2 = banco.findByEquip(equip);
 
-        if (resultado ==-1)
-            return "Erro ao cadastrar equipamento";
-        else
-            return "Equipamento cadastrado com sucesso";
+        if (isValid1 && isValid2){
+            resultado = db.insert(DAO.getTABELA3(), null, valores);
+            db.close();
+
+            if (resultado ==-1)
+                return "Erro ao cadastrar equipamento!";
+            else
+                return "Equipamento cadastrado com sucesso!";
+
+        }else{
+            return "Sala ou equipamento não existe!";
+        }
+
 
     }
+
 
 
 }

@@ -26,7 +26,7 @@ public class reserva extends AppCompatActivity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservasala);
         ActionBar bar = getSupportActionBar();
-        bar.setTitle("RESERVAL");
+        bar.setTitle("RESERVA");
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#5F9EA0")));
     }
 
