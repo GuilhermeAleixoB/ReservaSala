@@ -26,7 +26,7 @@ public class cadastroLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
         ActionBar bar = getSupportActionBar();
-        bar.setTitle("CADASTRO");
+        bar.setTitle("CADASTRO DE USUARIO");
         bar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#5F9EA0")));
     }
 

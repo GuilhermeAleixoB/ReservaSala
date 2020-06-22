@@ -62,7 +62,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tvRes"
         android:layout_alignBottom="@+id/tvRes"
-        android:text="ID sala:"
+        android:text="Nome do professor:"
         app:layout_constraintBottom_toTopOf="@+id/tvData"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tvData"
         android:layout_alignBottom="@+id/tvData"
-        android:text="Nome do professor:"
+        android:text="Número da sala:"
         app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
         app:layout_constraintStart_toStartOf="parent" />
 

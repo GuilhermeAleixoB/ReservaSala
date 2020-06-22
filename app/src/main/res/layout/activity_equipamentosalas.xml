@@ -78,7 +78,7 @@ android:layout_height="match_parent">
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/tvES"
         android:layout_alignBottom="@+id/tvES"
-        android:text="ID Sala:"
+        android:text="Número da sala:"
         app:layout_constraintBottom_toTopOf="@+id/tvEquip"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -89,7 +89,7 @@ android:layout_height="match_parent">
         android:layout_alignBaseline="@+id/tvProfessor"
         android:layout_alignBottom="@+id/tvProfessor"
         android:layout_marginBottom="5dp"
-        android:text="ID Equip:"
+        android:text="Nome do equipamento:"
         app:layout_constraintBottom_toTopOf="@+id/btnVoltar"
         app:layout_constraintStart_toStartOf="parent" />
 

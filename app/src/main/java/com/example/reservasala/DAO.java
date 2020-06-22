@@ -344,5 +344,20 @@ public class DAO extends SQLiteOpenHelper {
 
     }
 
+    public boolean findBySalaEquip(String sala, String equip) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String sql0 = "SELECT * FROM " + getTABELA3() + " WHERE nSala = ? AND equip = ?";
+        String[] selectionArgs = new String[] {sala, equip};
+        Cursor cursor = db.rawQuery(sql0, selectionArgs);
+        cursor.moveToFirst();
+
+        if (cursor.getCount() == 0){
+            return true;
+        }else{
+            return false;
+        }
+
+    }
+
 
 }

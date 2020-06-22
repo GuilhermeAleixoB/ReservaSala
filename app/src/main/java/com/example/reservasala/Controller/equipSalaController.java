@@ -26,8 +26,9 @@ public class equipSalaController {
 
         boolean isValid1 = banco.findBySala(sala);
         boolean isValid2 = banco.findByEquip(equip);
+        boolean isvalid3 = banco.findBySalaEquip(sala, equip);
 
-        if (isValid1 && isValid2){
+        if (isValid1 && isValid2 && isvalid3){
             resultado = db.insert(DAO.getTABELA3(), null, valores);
             db.close();
 
@@ -36,8 +37,12 @@ public class equipSalaController {
             else
                 return "Equipamento cadastrado com sucesso!";
 
+        }else if (!isValid1){
+            return "Sala não existe!";
+        }else if (!isValid2){
+            return "Equipamento não existe!";
         }else{
-            return "Sala ou equipamento não existe!";
+            return "Sala já associada ao equipamento!";
         }
 
 
